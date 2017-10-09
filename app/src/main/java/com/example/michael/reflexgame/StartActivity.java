@@ -62,17 +62,7 @@ public class StartActivity extends AppCompatActivity {
         editor.putInt(LEVEL, level);
         editor.commit();
 
-        HighscoreDBHelper dbHelper = new HighscoreDBHelper(getApplicationContext());
-        dbHelper.addHighscoreEntry(playername, level, (float)Math.random() * 1200);
 
-        try {
-
-            FileOutputStream os = openFileOutput(getFilesDir().getAbsolutePath() + File.separator + "REFLEX_CERTIFICATE.pdf", Context.MODE_PRIVATE);
-            os.write("Test1234".getBytes());
-            os.close();
-        } catch(IOException e){
-            System.err.println(e);
-        }
 
         Intent i = new Intent(getApplicationContext(),HighScoreActivity.class);
         startActivity(i);

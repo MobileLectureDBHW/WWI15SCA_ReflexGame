@@ -1,8 +1,10 @@
 package com.example.michael.reflexgame;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.michael.reflexgame.model.HighscoreDBHelper;
@@ -25,5 +27,10 @@ public class HighScoreActivity extends AppCompatActivity {
         TextView highscoreTextView = (TextView) findViewById(R.id.highscoreList);
         highscoreTextView.setText(highscore);
 
+    }
+
+    public void startGame(View view){
+        Intent i = new Intent(getApplicationContext(), GameActivity.class);
+        startActivity(i);
     }
 }

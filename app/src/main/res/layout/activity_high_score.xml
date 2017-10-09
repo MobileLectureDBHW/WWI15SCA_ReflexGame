@@ -15,6 +15,14 @@
         android:layout_height="wrap_content"
         android:text="Reflex Game" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Start Game"
+        android:onClick="startGame">
+
+    </Button>
+
 
     <TextView
         android:layout_marginTop="30dp"
