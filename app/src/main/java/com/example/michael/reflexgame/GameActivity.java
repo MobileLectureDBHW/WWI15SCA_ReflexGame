@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.michael.reflexgame.model.HighscoreDBHelper;
+import com.example.michael.reflexgame.servercommunication.HighscoreInserterTask;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -128,6 +129,9 @@ public class GameActivity extends AppCompatActivity {
 
         HighscoreDBHelper dbHelper = new HighscoreDBHelper(getApplicationContext());
         dbHelper.addHighscoreEntry(playername, level, points);
+
+        HighscoreInserterTask inserterTask = new HighscoreInserterTask();
+        inserterTask.execute(playername,level+"",points+"");
 
         task.cancel(true);
     }
