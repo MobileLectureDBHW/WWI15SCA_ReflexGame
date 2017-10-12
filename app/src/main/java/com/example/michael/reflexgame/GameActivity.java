@@ -57,7 +57,7 @@ public class GameActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                countdown--; 
+                countdown--;
 
                 boolean determineButton = false;
 
